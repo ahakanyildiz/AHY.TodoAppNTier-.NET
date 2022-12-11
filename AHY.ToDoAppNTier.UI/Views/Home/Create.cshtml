@@ -1,0 +1,27 @@
+﻿@model WorkCreateDto
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create Task</title>
+    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container my-2">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <form asp-action="Create" asp-controller="Home" method="post">
+            <div class="mb-2">
+                <label class="form-label">İşin Tanımı :</label>
+                <input class="form-control" asp-for="@Model.Definition" />
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" asp-for="@Model.IsCompleted" />
+                <label class="form-check-label" for="IsCompleted">Tamamlandı mı? </label>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Kaydet</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
